@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TAC FPS // Field Exercise</title><link rel="stylesheet" href="/style.css">
+</head><body><div id="game"></div>
+<div id="menu" class="overlay"><div class="panel"><div class="eyebrow">FIELD SIMULATION / 01</div><h1>TAC<span>_</span>FPS</h1><p class="sub">LOW-POLY COMBAT EXERCISE</p>
+<label>CALLSIGN<input id="name" maxlength="18" value="Operator" autocomplete="off"></label>
+<div class="row"><button id="createFfa">CREATE FFA</button><button id="createTdm" class="secondary">CREATE TDM</button></div>
+<div class="joinrow"><input id="joinCode" placeholder="LOBBY CODE" maxlength="6"><button id="join">JOIN</button></div>
+<p id="error" role="status"></p><div class="instructions">WASD MOVE · MOUSE AIM · CLICK FIRE · SPACE JUMP · SHIFT SPRINT<br>ESC RELEASES MOUSE · R RELOAD (visual only) · 10 MINUTE MATCH</div></div></div>
+<div id="hud" class="hidden"><div class="topline"><div class="brand">TAC<span>_</span>FPS <small id="roomLabel">LOBBY ----</small></div><div class="timer" id="timer">10:00</div><button id="copyCode">COPY JOIN CODE</button></div>
+<div class="crosshair"><i></i><b></b></div><div class="bottomleft"><div class="weapon">M4 / <span id="weapon">FULL AUTO</span></div><div class="health"><span id="hp">100</span> <small>VITALS</small><div><i id="hpbar"></i></div></div><div class="hint">WASD MOVE · CLICK TO FIRE · 1/2/3 WEAPONS</div></div>
+<div class="scoreboard"><h3>LIVE ROSTER <small id="count">0/12</small></h3><div id="scores"></div></div><div id="feed" class="feed"></div><div id="startHint">CLICK TO LOCK AIM</div></div>
+<script src="/socket.io/socket.io.js"></script><script type="module" src="/game.js"></script></body></html>
