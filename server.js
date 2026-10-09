@@ -107,7 +107,7 @@ io.on('connection', socket => {
         target.hp=0; target.alive=false; target.deaths++;
         shooter.kills++; shooter.score+=100;
         if(room.mode==='tdm') shooter.team==='ALPHA' ? room.alpha=(room.alpha||0)+1 : room.bravo=(room.bravo||0)+1;
-        io.to(room.code).emit('frag',{killer:shooter.name,victim:target.name,weapon:String(data?.weapon||'RIFLE')});
+        io.to(room.code).emit('frag',{killer:shooter.name,victim:target.name,victimId:target.id,weapon:String(data?.weapon||'RIFLE'),impact:{x:target.x,y:1.1,z:target.z}});
         setTimeout(() => {
           const r=rooms.get(room.code), dead=r?.players.get(target.id);
           if(!dead) return;
